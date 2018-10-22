@@ -1,6 +1,7 @@
 {
   "inDir": "<inDir>",
   "outDir": "<outDir>",
+  "inStrDir": "<inStrDir>",
   "testedExecutablePaths": {
     "<team id>": "<path_to_gazc_exe>"
   },
@@ -25,7 +26,8 @@
           "$INPUT"
         ],
         "output": "-",
-        "usesRuntime": true
+        "usesRuntime": true,
+        "usesInStr": true
       }
     ]
   }

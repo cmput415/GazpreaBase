@@ -32,15 +32,17 @@
 #   hanging, linking is probably the issue).
 # LLVM_ENABLE_DOXYGEN:
 #   Enables local docs building. Requires doxygen?
-LLVM_OPTIONS="-DLLVM_BUILD_TOOLS=OFF -DLLVM_BUILD_TESTS=OFF -DLLVM_INCLUDE_TESTS=OFF -DLLVM_BUILD_EXAMPLES=OFF -DLLVM_INCLUDE_EXAMPLES=OFF -DLLVM_ENABLE_ASSERTIONS=ON -DLLVM_OPTIMIZED_TABLEGEN=ON"
+LLVM_OPTIONS="-DLLVM_BUILD_TOOLS=ON -DLLVM_BUILD_TESTS=OFF -DLLVM_INCLUDE_TESTS=OFF -DLLVM_BUILD_EXAMPLES=OFF -DLLVM_INCLUDE_EXAMPLES=OFF -DLLVM_ENABLE_ASSERTIONS=ON -DLLVM_OPTIMIZED_TABLEGEN=ON"
 
 # -------------------------
 # STEP 1: CHOOSE PATHS.
 # Ideally these are absolute paths so you can run this script from anywhere.
 # Read the note below the sudo trap (the trap is the whole if statement)
 # about how the install directory will be used.
-SRC_DIR="$HOME/llvm/" # The directory you've checked out llvm into.
-BLD_DIR="$SRC_DIR/build" # The directory llvm will be built to.
+BAS_DIR="$HOME/llvm-project"
+SRC_DIR="$BAS_DIR/llvm" # The directory inside where you've checked
+                                  # out llvm.
+BLD_DIR="$BAS_DIR/build" # The directory llvm will be built to.
 INS_DIR="$LLVM_INS" # DON'T TOUCH THIS. SEE README.
 
 # Sudo trap.
@@ -102,4 +104,4 @@ if [[ "$unamestr" == 'Linux' ]]; then
    USE_GOLD="-DLLVM_USE_LINKER=gold"
 fi
 
-cmake "$SRC_DIR" -DCMAKE_BUILD_TYPE="$BUILD" -DLLVM_TARGETS_TO_BUILD=X86 $USE_GOLD $USE_INSTALL "$LLVM_OPTIONS"
+cmake "$SRC_DIR" -DCMAKE_BUILD_TYPE="$BUILD" -DLLVM_TARGETS_TO_BUILD=X86 $USE_GOLD $USE_INSTALL $LLVM_OPTIONS

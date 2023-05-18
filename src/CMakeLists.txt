@@ -15,7 +15,7 @@ add_dependencies(gazc antlr)
 # that we wish to use
 llvm_map_components_to_libnames(llvm_libs core)
 
-# Add the antlr runtime and parser as libraries to link.
+# Add the LLVM, antlr runtime and parser as libraries to link.
 target_link_libraries(gazc parser antlr4-runtime ${llvm_libs})
 
 # Symbolic link our executable to the base directory so we don't have to go searching for it.

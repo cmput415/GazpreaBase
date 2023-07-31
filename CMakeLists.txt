@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.12)
 project(GazpreaBase)
 
 # Ensure tool dependencies.
@@ -6,8 +6,8 @@ include(ExternalProject) # Required to download and build external projects (i.e
 find_package(Git REQUIRED) # Need git to download ANTLR through ExternalProject.
 find_package(Java COMPONENTS Runtime REQUIRED) # Need java to run ANTLR, but only the runtime.
 
-# Ensure we have LLVM.
-include("${CMAKE_SOURCE_DIR}/cmake/get_llvm.cmake")
+# Ensure we have MLIR.
+include("${CMAKE_SOURCE_DIR}/cmake/get_mlir.cmake")
 
 # Link against the pthreads library to make std::call_once 
 # in generated ANTLR code to run without producing system errors

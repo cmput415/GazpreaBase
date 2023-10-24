@@ -8,5 +8,8 @@ gen/
 cmake-build*/
 .idea/
 
+# Ignore build files
+build/
+
 # Ignore macOS files
 .DS_STORE

@@ -4,6 +4,7 @@
 BackEnd::BackEnd() : loc(mlir::UnknownLoc::get(&context)) {
     // Load Dialects.
     context.loadDialect<mlir::LLVM::LLVMDialect>();
+    context.loadDialect<mlir::func::FuncDialect>();
     context.loadDialect<mlir::arith::ArithDialect>();
     context.loadDialect<mlir::scf::SCFDialect>();
     context.loadDialect<mlir::cf::ControlFlowDialect>();
@@ -59,6 +60,9 @@ int BackEnd::emitModule() {
 int BackEnd::lowerDialects() {
     // Set up the MLIR pass manager to iteratively lower all the Ops
     mlir::PassManager pm(&context);
+
+    // Lower Func dialect to LLVM
+    pm.addPass(mlir::createConvertFuncToLLVMPass());
 
     // Lower SCF to CF (ControlFlow)
     pm.addPass(mlir::createConvertSCFToCFPass());

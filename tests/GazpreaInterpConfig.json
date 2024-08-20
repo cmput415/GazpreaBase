@@ -13,20 +13,14 @@
       {
         "stepName": "gazc",
         "executablePath": "$EXE",
-        "arguments": [
-          "$INPUT",
-          "$OUTPUT"
-          ],
+        "arguments": ["$INPUT","$OUTPUT"],
         "output": "gazc.ll",
         "allowError": true
       },
       {
         "stepName": "lli",
-        "executablePath": "/cshome/cmput415/415-resources/llvm-project/build/bin/lli",
-        "arguments": [
-          "$INPUT"
-        ],
-        "output": "-",
+        "executablePath": "<path-to-lli>",
+        "arguments": ["$INPUT"],
         "usesRuntime": true,
         "usesInStr": true,
         "allowError": true

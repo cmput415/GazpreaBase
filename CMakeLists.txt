@@ -9,6 +9,9 @@ find_package(Java COMPONENTS Runtime REQUIRED) # Need java to run ANTLR, but onl
 # Ensure we have LLVM.
 include("${CMAKE_SOURCE_DIR}/cmake/get_mlir.cmake")
 
+# Generate the Gazprea Dialect
+include("${CMAKE_SOURCE_DIR}/cmake/gen_gazprea_dialect.cmake")
+
 # Link against the pthreads library to make std::call_once 
 # in generated ANTLR code to run without producing system errors
 # (see issue https://github.com/antlr/antlr4/issues/3708).

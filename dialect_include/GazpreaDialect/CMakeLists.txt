@@ -1,4 +1,4 @@
-add_mlir_dialect(GazpreaDialect gazprea)
+add_mlir_dialect(Gazprea gazprea)
 #add_mlir_doc(GazpreaDialect GazpreaDialect GazpreaDialect/ -gen-dialect-doc)
 #add_mlir_doc(GazpreaOps GazpreaOps GazpreaDialect/ -gen-op-doc)
 

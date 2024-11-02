@@ -1,8 +1,8 @@
-#include "GazpreaDialect/GazpreaDialect.h"
+#include "GazpreaDialect/Gazprea.h"
 
-#include "GazpreaDialect/GazpreaDialectDialect.h.inc"
+#include "GazpreaDialect/GazpreaDialect.h.inc"
 
-#include "GazpreaDialect/GazpreaDialectDialect.cpp.inc"
+#include "GazpreaDialect/GazpreaDialect.cpp.inc"
 
 namespace mlir {
 namespace gazprea {

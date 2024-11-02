@@ -1,3 +1,5 @@
+include_directories("${CMAKE_SOURCE_DIR}/dialect_include/Gazprea")
+
 add_mlir_dialect_library(MLIRGazprea
         GazpreaTypes.cpp
         GazpreaDialect.cpp
@@ -8,11 +10,9 @@ add_mlir_dialect_library(MLIRGazprea
         ${PROJECT_SOURCE_DIR}/dialect_include/GazpreaDialect
 
         DEPENDS
-        MLIRGazpreaOpsIncGen
+	MLIRGazpreaOpsIncGen
         MLIRGazpreaPassesIncGen
 
-        LINK_COMPONENTS PUBLIC
-        MLIRIR
-        MLIRInferTypeOpInterface
-        MLIRFuncDialect
+	# LINK_COMPONENTS PUBLIC
+        # MLIRIR
         )

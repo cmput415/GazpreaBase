@@ -1,17 +1,15 @@
 #include "GazpreaDialect/GazpreaDialect.h"
 
-#include "lib/Dialect/Gazprea/GazpreaDialect.h"
+#include "GazpreaDialect/GazpreaDialectDialect.h.inc"
 
-#include "lib/Dialect/Gazprea/GazpreaDialect.cpp.inc"
+#include "GazpreaDialect/GazpreaDialectDialect.cpp.inc"
 
 namespace mlir {
-namespace tutorial {
-namespace poly {
+namespace gazprea {
 
 void GazpreaDialect::initialize() {
   // This is where we will register types and operations with the dialect
 }
 
-}  // namespace poly
-}  // namespace tutorial
+}
 }  // namespace mlir

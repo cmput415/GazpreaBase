@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.0)
 project(GazpreaBase)
 
+cmake_policy(SET CMP0057 NEW)
+
 # Ensure tool dependencies.
 include(ExternalProject) # Required to download and build external projects (i.e. ANTLR).
 find_package(Git REQUIRED) # Need git to download ANTLR through ExternalProject.
@@ -39,6 +41,7 @@ include("${CMAKE_SOURCE_DIR}/cmake/antlr_generate.cmake")
 
 # Include project headers.
 include_directories("${CMAKE_SOURCE_DIR}/include")
+include_directories("${CMAKE_SOURCE_DIR}/dialect_include")
 
 # Add the source directory.
 add_subdirectory("${CMAKE_SOURCE_DIR}/src")

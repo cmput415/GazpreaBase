@@ -12,6 +12,6 @@
 #include "mlir/Bytecode/BytecodeOpInterface.h"
 #include "mlir/IR/Dialect.h"
 
-#include "GazpreaDialect/GazpreaOpsDialect.h.inc"
+// #include "GazpreaDialect/GazpreaOpsDialect.h.inc"
 
 #endif // GAZPREA_GAZPREADIALECT_H

@@ -19,14 +19,14 @@ set(STANDALONE_SOURCE_DIR ${PROJECT_SOURCE_DIR})
 set(STANDALONE_BINARY_DIR ${PROJECT_BINARY_DIR})
 include_directories(${LLVM_INCLUDE_DIRS})
 include_directories(${MLIR_INCLUDE_DIRS})
-include_directories(${STANDALONE_SOURCE_DIR}/dialect_include)
-include_directories(${STANDALONE_BINARY_DIR}/dialect_include)
+include_directories(${STANDALONE_SOURCE_DIR}/dialect)
+include_directories(${STANDALONE_BINARY_DIR}/dialect)
 link_directories(${LLVM_BUILD_LIBRARY_DIR})
 add_definitions(${LLVM_DEFINITIONS})
 
-add_subdirectory(${PROJECT_SOURCE_DIR}/dialect_include)
+add_subdirectory(${PROJECT_SOURCE_DIR}/dialect)
 add_subdirectory(lib)
-#
+
 #add_subdirectory(${PROJECT_SOURCE_DIR}/test)
 #add_subdirectory(standalone-opt)
 #add_subdirectory(standalone-plugin)

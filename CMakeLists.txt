@@ -41,7 +41,7 @@ include("${CMAKE_SOURCE_DIR}/cmake/antlr_generate.cmake")
 
 # Include project headers.
 include_directories("${CMAKE_SOURCE_DIR}/include")
-include_directories("${CMAKE_SOURCE_DIR}/dialect_include")
+include_directories("${CMAKE_SOURCE_DIR}/dialect")
 
 # Add the source directory.
 add_subdirectory("${CMAKE_SOURCE_DIR}/src")

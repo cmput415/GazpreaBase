@@ -27,7 +27,7 @@ int BackEnd::emitModule() {
     mlir::Type intType = mlir::IntegerType::get(&context, 32);
     auto mainType = mlir::LLVM::LLVMFunctionType::get(intType, {}, false);
     mlir::LLVM::LLVMFuncOp mainFunc = builder->create<mlir::LLVM::LLVMFuncOp>(loc, "main", mainType);
-    mlir::Block *entry = mainFunc.addEntryBlock();
+    mlir::Block *entry = mainFunc.addEntryBlock(*builder);
     builder->setInsertionPointToStart(entry);
 
     // Get the integer format string we already created.   

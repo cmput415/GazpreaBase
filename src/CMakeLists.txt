@@ -24,7 +24,10 @@ target_link_libraries(gazc PRIVATE
     antlr4-runtime
     ${llvm_libs}
     ${dialect_libs}
-    )
+	MLIRLLVMCommonConversion
+	MLIRLLVMToLLVMIRTranslation
+    MLIRBuiltinToLLVMIRTranslation
+)
 
 # Symbolic link our executable to the base directory so we don't have to go searching for it.
 symlink_to_bin("gazc")

@@ -11,7 +11,7 @@ on:
 jobs:
   build:
     runs-on: gazprea
-    container: technomancernc/cmput-415:gaz24
+    container: ghcr.io/cmput415/gaz-utils:latest
 
     steps:
     # Step 1: Checkout the repository
